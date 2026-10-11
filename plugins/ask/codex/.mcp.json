@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "ask-dubit-development": {
+      "url": "http://127.0.0.1:3101/mcp",
+      "oauth": {
+        "client_id": "8fd54177-445e-4a38-a3fa-5129b6f95f1f",
+        "resource": "http://127.0.0.1:3101/mcp"
+      }
+    }
+  }
+}

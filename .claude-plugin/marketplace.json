@@ -1,0 +1,17 @@
+{
+  "name": "dubit",
+  "owner": {
+    "name": "Dubit"
+  },
+  "metadata": {
+    "description": "Dubit plugins. Ask Dubit local research preview; more Dubit plugins can follow."
+  },
+  "plugins": [
+    {
+      "name": "ask-dubit-development",
+      "source": "./plugins/ask/claude",
+      "description": "Ask Dubit internal research pilot (development). Ask the orchestrator or an accessible specialist.",
+      "version": "0.2.0-beta.2"
+    }
+  ]
+}
