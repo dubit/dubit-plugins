@@ -12,6 +12,12 @@
       "source": "./plugins/ask/claude",
       "description": "Ask Dubit internal research pilot (development). Ask the orchestrator or an accessible specialist.",
       "version": "0.2.0-beta.2"
+    },
+    {
+      "name": "ask-dubit-desktop",
+      "source": "./plugins/ask/claude-desktop",
+      "description": "Ask Dubit hosted pilot for Claude Desktop Chat. Requires the separately configured and connected Ask Dubit custom connector.",
+      "version": "0.2.0-beta.3"
     }
   ]
 }

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "ask-dubit": {
+      "type": "http",
+      "url": "https://trends-server.fly.dev/mcp"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "ask-dubit-desktop",
+  "version": "0.2.0-beta.3",
+  "description": "Ask Dubit hosted pilot for Claude Desktop Chat. Requires the separately configured and connected Ask Dubit custom connector.",
+  "author": {
+    "name": "Dubit"
+  }
+}
