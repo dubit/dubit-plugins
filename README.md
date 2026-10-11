@@ -2,7 +2,7 @@
 
 The Dubit plugin catalogue for Claude Code and Codex. Ask Dubit is the first plugin; Dubit Build is planned but is not available yet.
 
-**Claude Desktop Chat candidate: 0.2.0-beta.3.** The package is under [`plugins/ask/claude-desktop`](plugins/ask/claude-desktop). Hosted activation and actual Desktop acceptance are pending; it is not a working hosted release yet. It uses a separately configured Ask Dubit custom connector, followed by the plugin skill. It has no Claude Code callback settings. Operator packaging: `python3 scripts/package-claude-desktop.py --output /path/to/empty/artifact-directory`.
+**Claude Desktop Chat candidate: 0.2.0-beta.4.** The package is under [`plugins/ask/claude-desktop`](plugins/ask/claude-desktop). Hosted activation, controlled OAuth registration and actual Desktop acceptance are pending; it is not a working hosted release yet. The intended setup is to install the plugin, open its Connectors tab, Add/Connect Ask Dubit, sign in with the existing Ask Dubit Magic Link flow, approve access and return to Claude. Customers do not set up a CLI, token or OAuth client ID. It has no Claude Code callback settings. See the [candidate instructions](plugins/ask/claude-desktop/README.md). Operator packaging: `python3 scripts/package-claude-desktop.py --output /path/to/empty/artifact-directory`.
 
 **Current release: Ask Dubit local developer preview, 0.2.0-beta.2.** The plugin connects to a local Ask Dubit test service at `http://127.0.0.1:3101/mcp`. Publishing this catalogue does not activate a hosted service or connect production Ask Dubit accounts. This release requires an existing, operator-configured local test environment. The backend and its setup are not included in this repository.
 
