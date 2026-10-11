@@ -1,10 +1,22 @@
 # Dubit plugins
 
-The Dubit plugin catalogue for Claude Code and Codex. Ask Dubit is the first plugin; Dubit Build is planned but is not available yet.
+The Dubit plugin catalogue for Claude Desktop Chat, Claude Code and Codex. Ask Dubit is the first plugin; Dubit Build is planned but is not available yet.
 
-**Claude Desktop Chat candidate: 0.2.0-beta.4.** The package is under [`plugins/ask/claude-desktop`](plugins/ask/claude-desktop). Hosted activation, controlled OAuth registration and actual Desktop acceptance are pending; it is not a working hosted release yet. The intended setup is to install the plugin, open its Connectors tab, Add/Connect Ask Dubit, sign in with the existing Ask Dubit Magic Link flow, approve access and return to Claude. Customers do not set up a CLI, token or OAuth client ID. It has no Claude Code callback settings. See the [candidate instructions](plugins/ask/claude-desktop/README.md). Operator packaging: `python3 scripts/package-claude-desktop.py --output /path/to/empty/artifact-directory`.
+**Claude Desktop Chat pilot: 0.2.0-beta.5.** The hosted MCP, native OAuth registration and consent website are active for approved pilot accounts. Research is disabled while actual Desktop sign-in and delegated token isolation are verified. This is a connection-test pilot, not an accepted research release. Customers do not set up a CLI, token or OAuth client ID. See the [pilot instructions](plugins/ask/claude-desktop/README.md).
 
-**Current release: Ask Dubit local developer preview, 0.2.0-beta.2.** The plugin connects to a local Ask Dubit test service at `http://127.0.0.1:3101/mcp`. Publishing this catalogue does not activate a hosted service or connect production Ask Dubit accounts. This release requires an existing, operator-configured local test environment. The backend and its setup are not included in this repository.
+## Install the Claude Desktop pilot from this repository
+
+1. In Claude Desktop's Chat tab, open **Customize → Plugins → Add → Add marketplace → Add from a repository**.
+2. Enter **`dubit/dubit-plugins`** (or `https://github.com/dubit/dubit-plugins`).
+3. Find **`ask-dubit-desktop`** in that marketplace and choose **Add**.
+4. Open the plugin's **Connectors** tab, Add its bundled Ask Dubit connector if needed, then **Connect**. Sign in to your existing Ask Dubit account using Magic Link if prompted and explicitly approve access. On Team and Enterprise plans, an Owner may need to add the connector first.
+5. In a fresh chat, ask: **"Use Ask Dubit to run only connection_check. Do not run research."** A successful pilot check should report connected with research disabled.
+
+Only approved pilot accounts can connect. Installing the plugin does not grant account access or sign you in. If the marketplace was added previously, choose **Check for updates** before selecting the Desktop pilot. Do not choose `ask-dubit-development` for Desktop Chat; that separate preview uses a local test service.
+
+This uses Claude's repository marketplace installation; no ZIP download is required. It is not currently an Anthropic directory listing. A plain chat request has not been verified as an installation mechanism; the documented installation route uses the Plugins menu. After installation and connection, ordinary chat requests can invoke the bundled skill.
+
+**Separate local developer preview: 0.2.0-beta.2.** This plugin connects to a local Ask Dubit test service at `http://127.0.0.1:3101/mcp`. It requires an existing, operator-configured local test environment. The backend and its setup are not included in this repository. Publishing a client package does not deploy its backend.
 
 ## Install in Claude Code
 

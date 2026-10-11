@@ -9,7 +9,7 @@
 | Claude Desktop Chat / Cowork | The local HTTP preview is unsupported because account remote connectors cannot reach loopback. The separate hosted Desktop Chat candidate has not passed actual Desktop acceptance; Cowork remains unaccepted. |
 | Codex CLI 0.162.1 | Local installation and connection proof passed with the callback settings below. Research acceptance is pending. |
 | Codex desktop | Not accepted. |
-| Hosted Ask Dubit accounts | Not activated or accepted. |
+| Hosted Ask Dubit accounts | Connection-only service active for approved pilot accounts. Research disabled; actual Desktop/token acceptance pending. |
 
 The existing local research acceptance does not prove desktop or hosted compatibility. Plugin catalogue installation is verified separately from authenticated service use.
 
@@ -39,9 +39,9 @@ The pilot returns at most 64 published blocks, 50 rows per table and 256 KiB, wi
 
 ## Hosted Desktop candidate
 
-`plugins/ask/claude-desktop/` is unaccepted release candidate `0.2.0-beta.4`. The target is normal Claude Desktop Chat; other surfaces remain unaccepted. Controlled Supabase dynamic client registration, hosted activation and actual Desktop acceptance are pending. The hosted callback remains exactly `https://claude.ai/api/mcp/auth_callback`.
+`plugins/ask/claude-desktop/` is connection-test pilot `0.2.0-beta.5`. The target is normal Claude Desktop Chat; other surfaces remain unaccepted. Controlled Supabase dynamic client registration, hosted MCP and consent are active for approved pilot accounts. Research is disabled; actual Desktop and delegated token acceptance remain pending. The hosted callback remains exactly `https://claude.ai/api/mcp/auth_callback`.
 
-The intended resource is exactly `https://trends-server.fly.dev/mcp`. After operator readiness, install the plugin, open Customize → Plugins → Ask Dubit → Connectors, Add its bundled connector if needed, then Connect. Complete the existing Ask Dubit Magic Link login if prompted, explicitly approve access and return to Claude. Customers do not configure a CLI, token or OAuth client ID. On Team and Enterprise plans an Owner may need to add the connector before members connect individually. The URL-only `.mcp.json` supplies the bundled connector reference; Claude and the hosted OAuth service handle registration and sign-in. This is the intended flow, not evidence of completed activation or installation.
+The intended resource is exactly `https://trends-server.fly.dev/mcp`. Install from **Customize → Plugins → Add → Add marketplace → Add from a repository**, enter **`dubit/dubit-plugins`**, then Add **`ask-dubit-desktop`**. Open its Connectors tab, Add its bundled connector if needed, then Connect. Complete the existing Ask Dubit Magic Link login if prompted, explicitly approve access and return to Claude. Customers do not configure a CLI, token or OAuth client ID. On Team and Enterprise plans an Owner may need to add the connector before members connect individually. The URL-only `.mcp.json` supplies the bundled connector reference; Claude and the hosted OAuth service handle registration and sign-in. The connection-only service is active; actual Desktop installation and OAuth acceptance remain unproved.
 
 Operators must establish controlled client enrollment and token isolation before enabling DCR: registration alone grants no Ask Dubit access, and only validated authorizations for eligible users may be admitted. Deployment CLI login and scoped management credentials are operator prerequisites, separate from customer setup. Neither belongs in the plugin. Do not publish the candidate as ready merely because its manifest validates or the service is deployed.
 

@@ -1,17 +1,19 @@
 # Ask Dubit for Claude Desktop Chat
 
-Release candidate **0.2.0-beta.4** only: controlled OAuth registration, hosted activation and actual Desktop acceptance are pending. Do not install this candidate expecting a working hosted account connection yet.
+Connection-test pilot **0.2.0-beta.5**: the hosted MCP, native OAuth registration and consent website are active for approved pilot accounts. Research remains disabled. Actual Claude Desktop sign-in, delegated token isolation, refresh/revocation and research acceptance are pending; this is not an accepted research release.
 
-Once the service is ready, the intended customer setup in normal Claude Desktop Chat is:
+Install from the public Dubit marketplace in normal Claude Desktop Chat:
 
-1. Install the Ask Dubit plugin in Customize → Plugins. For this candidate, use Add → Upload plugin with its single-plugin ZIP.
+1. Open **Customize → Plugins → Add → Add marketplace → Add from a repository** and enter **`dubit/dubit-plugins`**. Find **`ask-dubit-desktop`** and choose **Add**. If the marketplace is already added, choose **Check for updates** first. Do not select the separate `ask-dubit-development` local preview for Desktop Chat.
 2. Open Ask Dubit's **Connectors** tab. Add the bundled Ask Dubit connector if it is Not added, then choose **Connect**. If it is already Connected, continue. On Team and Enterprise plans an Owner may need to add the connector before members connect individually.
 3. Sign in through the existing Ask Dubit account's Magic Link flow if prompted, then explicitly approve the connection.
-4. Return to Claude and check the connection. Ask a research question when ready; connecting alone does not run research or use the analysis allowance.
+4. Return to a fresh Claude chat and ask: **"Use Ask Dubit to run only connection_check. Do not run research."** A successful check should report connected with research disabled. Connecting alone does not run research or use the analysis allowance.
+
+Repository installation does not require downloading a ZIP. The marketplace is publicly readable; service access remains limited to approved pilot accounts. This is a Dubit marketplace, not an Anthropic directory listing. Claude documents installation through the Plugins menu; installation by a plain chat message has not been verified.
 
 Customers do not need a terminal, access token, client secret or manually entered OAuth client ID. The plugin references `https://trends-server.fly.dev/mcp`; its skill becomes usable after the bundled account connector is connected. Installation alone does not sign you in. If Claude asks for OAuth client credentials, this candidate has not met its intended setup gate; do not work around it with manual credentials.
 
-Operator readiness is separate: activate and verify the hosted backend, controlled Supabase dynamic client registration, consent flow and token-isolation protections before customer testing. The hosted callback is exactly `https://claude.ai/api/mcp/auth_callback`. Deployment CLI login and scoped management credentials belong to operators and are never customer installation steps or ZIP contents.
+Operator readiness is separate: the backend, controlled Supabase dynamic client registration, consent flow and isolated-token controls are deployed for this pilot. Actual delegated issuance/isolation and native Desktop behavior must pass before research activation. The hosted callback is exactly `https://claude.ai/api/mcp/auth_callback`. Deployment CLI login and scoped management credentials belong to operators and are never customer installation steps or plugin contents.
 
 Revocation is permanent for the affected Ask Dubit user and OAuth client ID in this pilot. Signing in again, reinstalling the plugin or reconnecting with that same client ID does not restore access. A new connection may require a fresh client UUID and new explicit consent. Automatic fresh-client registration/reconnect remains unproved; if Claude reuses a revoked identity, operator assistance may be required. Never delete or reset a revocation marker to reconnect. This restriction belongs to the service, not the ZIP.
 

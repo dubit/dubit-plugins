@@ -4,7 +4,7 @@
     "name": "Dubit"
   },
   "metadata": {
-    "description": "Dubit plugins. Ask Dubit local research preview; more Dubit plugins can follow."
+    "description": "Dubit plugins. Ask Dubit Desktop connection pilot and separate local developer previews; more Dubit plugins can follow."
   },
   "plugins": [
     {
@@ -16,8 +16,8 @@
     {
       "name": "ask-dubit-desktop",
       "source": "./plugins/ask/claude-desktop",
-      "description": "Ask Dubit for Claude Desktop Chat. Connect the bundled connector with your Ask Dubit account. Release candidate; hosted activation and Desktop acceptance are pending.",
-      "version": "0.2.0-beta.4"
+      "description": "Ask Dubit for Claude Desktop Chat. Approved-account connection pilot with OAuth sign-in. Research disabled; native Desktop acceptance pending.",
+      "version": "0.2.0-beta.5"
     }
   ]
 }
