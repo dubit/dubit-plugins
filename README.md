@@ -2,7 +2,7 @@
 
 The Dubit plugin catalogue for Claude Desktop Chat, Claude Code and Codex. Ask Dubit is the first plugin; Dubit Build is planned but is not available yet.
 
-**Claude Desktop Chat pilot: 0.2.0-beta.7.** MCP access is on by default for companies and controlled in Dubit’s company admin settings. Eligible members use their existing Ask permissions and allowances; each person approves their own OAuth connection. Native Desktop sign-in and connection have been reported working; full native research, refresh and reconnect acceptance remain pending. Hosted MCP specialist and orchestrator research, token isolation and original-request recovery have passed operator checks. Customers do not set up a CLI, token or OAuth client ID. See the [pilot instructions](plugins/ask/claude-desktop/README.md).
+**Claude Desktop Chat pilot: 0.2.0-beta.8.** MCP access is on by default for companies and controlled in Dubit’s company admin settings. Eligible members use their existing Ask permissions and allowances; each person approves their own OAuth connection. Native Desktop sign-in and connection have been reported working; full native research, refresh and reconnect acceptance remain pending. Hosted MCP specialist and orchestrator research, token isolation and original-request recovery have passed operator checks. Customers do not set up a CLI, token or OAuth client ID. See the [pilot instructions](plugins/ask/claude-desktop/README.md).
 
 ## Install the Claude Desktop pilot from this repository
 

@@ -17,7 +17,7 @@
       "name": "ask-dubit-desktop",
       "source": "./plugins/ask/claude-desktop",
       "description": "Ask Dubit for Claude Desktop Chat. Company-controlled research pilot with existing Ask permissions and OAuth sign-in. Full native Desktop acceptance pending.",
-      "version": "0.2.0-beta.7"
+      "version": "0.2.0-beta.8"
     }
   ]
 }
