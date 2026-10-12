@@ -1,6 +1,6 @@
 # Ask Dubit for Claude Desktop Chat
 
-Research pilot **0.2.0-beta.6**: MCP access is on by default for companies, controlled in Dubit’s existing company admin settings. Members inherit their existing Ask permissions and allowances and individually approve their OAuth connection. Native Claude Desktop sign-in and connection have been reported working. Hosted MCP specialist and orchestrator answers, token isolation and original-request recovery have passed operator checks. Full native research, follow-up, recovery, refresh and revocation/reconnect acceptance remain pending.
+Research pilot **0.2.0-beta.7**: MCP access is on by default for companies, controlled in Dubit’s existing company admin settings. Members inherit their existing Ask permissions and allowances and individually approve their OAuth connection. Native Claude Desktop sign-in and connection have been reported working. Hosted MCP specialist and orchestrator answers, token isolation and original-request recovery have passed operator checks. Full native research, follow-up, recovery, refresh and revocation/reconnect acceptance remain pending.
 
 Install from the public Dubit marketplace in normal Claude Desktop Chat:
 
@@ -8,7 +8,7 @@ Install from the public Dubit marketplace in normal Claude Desktop Chat:
 2. Open Ask Dubit's **Connectors** tab. Add the bundled Ask Dubit connector if it is Not added, then choose **Connect**. If it is already Connected, continue. On Team and Enterprise plans an Owner may need to add the connector before members connect individually.
 3. Sign in through the existing Ask Dubit account's Magic Link flow if prompted, then explicitly approve the connection.
 4. Return to a fresh Claude chat and ask: **"Use Ask Dubit to run only connection_check. Do not run research."** Check that it reports connected. New research requires `research_enabled: true`. If research is paused, agent discovery and saved-request recovery remain available, subject to current permissions. Connecting alone does not run research or use the analysis allowance.
-5. Ask: **"Use Ask Dubit to research: How many kids use YouTube in the US?"** Research questions use your existing Ask allowance and company spending limits. The skill checks the connection before dispatching research.
+5. Ask: **"How many kids use YouTube in the US?"** The skill is configured to recognise relevant youth research without requiring the Dubit name. You can explicitly request it with **"Use Ask Dubit to research: How many kids use YouTube in the US?"** Research questions use your existing Ask allowance and company spending limits. The skill checks the connection before dispatching research.
 
 Repository installation does not require downloading a ZIP. The marketplace is publicly readable; service access requires an eligible Ask account and company MCP access. Company administrators can switch MCP access off without removing website Ask access. This is a Dubit marketplace, not an Anthropic directory listing. Claude documents installation through the Plugins menu; installation by a plain chat message has not been verified.
 
