@@ -2,7 +2,7 @@
 
 The Dubit plugin catalogue for Claude Desktop Chat, Claude Code and Codex. Ask Dubit is the first plugin; Dubit Build is planned but is not available yet.
 
-**Claude Desktop Chat pilot: 0.2.0-beta.5.** The hosted MCP, native OAuth registration and consent website are active for approved pilot accounts. Research is disabled while actual Desktop sign-in and delegated token isolation are verified. This is a connection-test pilot, not an accepted research release. Customers do not set up a CLI, token or OAuth client ID. See the [pilot instructions](plugins/ask/claude-desktop/README.md).
+**Claude Desktop Chat pilot: 0.2.0-beta.5.** Bounded research is enabled for approved pilot accounts. Native Desktop sign-in and connection have been reported working; full native research, refresh and reconnect acceptance remain pending. Hosted MCP specialist and orchestrator research, token isolation and original-request recovery have passed operator checks. Customers do not set up a CLI, token or OAuth client ID. See the [pilot instructions](plugins/ask/claude-desktop/README.md).
 
 ## Install the Claude Desktop pilot from this repository
 
@@ -10,7 +10,8 @@ The Dubit plugin catalogue for Claude Desktop Chat, Claude Code and Codex. Ask D
 2. Enter **`dubit/dubit-plugins`** (or `https://github.com/dubit/dubit-plugins`).
 3. Find **`ask-dubit-desktop`** in that marketplace and choose **Add**.
 4. Open the plugin's **Connectors** tab, Add its bundled Ask Dubit connector if needed, then **Connect**. Sign in to your existing Ask Dubit account using Magic Link if prompted and explicitly approve access. On Team and Enterprise plans, an Owner may need to add the connector first.
-5. In a fresh chat, ask: **"Use Ask Dubit to run only connection_check. Do not run research."** A successful pilot check should report connected with research disabled.
+5. In a fresh chat, ask: **"Use Ask Dubit to run only connection_check. Do not run research."** Proceed only if it reports connected with research enabled.
+6. Ask: **"Use Ask Dubit to research: How many kids use YouTube in the US?"** Research questions use your account's analysis allowance.
 
 Only approved pilot accounts can connect. Installing the plugin does not grant account access or sign you in. If the marketplace was added previously, choose **Check for updates** before selecting the Desktop pilot. Do not choose `ask-dubit-development` for Desktop Chat; that separate preview uses a local test service.
 
