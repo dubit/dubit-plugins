@@ -2,7 +2,7 @@
 
 The Dubit plugin catalogue for Claude Desktop Chat, Claude Code and Codex. Ask Dubit is the first plugin; Dubit Build is planned but is not available yet.
 
-**Claude Desktop Chat pilot: 0.2.0-beta.5.** Bounded research is enabled for approved pilot accounts. Native Desktop sign-in and connection have been reported working; full native research, refresh and reconnect acceptance remain pending. Hosted MCP specialist and orchestrator research, token isolation and original-request recovery have passed operator checks. Customers do not set up a CLI, token or OAuth client ID. See the [pilot instructions](plugins/ask/claude-desktop/README.md).
+**Claude Desktop Chat pilot: 0.2.0-beta.6.** MCP access is on by default for companies and controlled in Dubit’s company admin settings. Eligible members use their existing Ask permissions and allowances; each person approves their own OAuth connection. Native Desktop sign-in and connection have been reported working; full native research, refresh and reconnect acceptance remain pending. Hosted MCP specialist and orchestrator research, token isolation and original-request recovery have passed operator checks. Customers do not set up a CLI, token or OAuth client ID. See the [pilot instructions](plugins/ask/claude-desktop/README.md).
 
 ## Install the Claude Desktop pilot from this repository
 
@@ -10,10 +10,10 @@ The Dubit plugin catalogue for Claude Desktop Chat, Claude Code and Codex. Ask D
 2. Enter **`dubit/dubit-plugins`** (or `https://github.com/dubit/dubit-plugins`).
 3. Find **`ask-dubit-desktop`** in that marketplace and choose **Add**.
 4. Open the plugin's **Connectors** tab, Add its bundled Ask Dubit connector if needed, then **Connect**. Sign in to your existing Ask Dubit account using Magic Link if prompted and explicitly approve access. On Team and Enterprise plans, an Owner may need to add the connector first.
-5. In a fresh chat, ask: **"Use Ask Dubit to run only connection_check. Do not run research."** Proceed only if it reports connected with research enabled.
-6. Ask: **"Use Ask Dubit to research: How many kids use YouTube in the US?"** Research questions use your account's analysis allowance.
+5. In a fresh chat, ask: **"Use Ask Dubit to run only connection_check. Do not run research."** Check that it reports connected. New research requires `research_enabled: true`; agent discovery and saved-request recovery remain available while research is paused, subject to current permissions.
+6. Ask: **"Use Ask Dubit to research: How many kids use YouTube in the US?"** Research questions use your existing Ask permissions and allowances.
 
-Only approved pilot accounts can connect. Installing the plugin does not grant account access or sign you in. If the marketplace was added previously, choose **Check for updates** before selecting the Desktop pilot. Do not choose `ask-dubit-development` for Desktop Chat; that separate preview uses a local test service.
+Company MCP access and existing Ask account permissions determine who can connect. A company administrator can switch MCP access off without removing website Ask access. Installing the plugin does not grant account access or sign you in. If the marketplace was added previously, choose **Check for updates** before selecting the Desktop pilot. Do not choose `ask-dubit-development` for Desktop Chat; that separate preview uses a local test service.
 
 This uses Claude's repository marketplace installation; no ZIP download is required. It is not currently an Anthropic directory listing. A plain chat request has not been verified as an installation mechanism; the documented installation route uses the Plugins menu. After installation and connection, ordinary chat requests can invoke the bundled skill.
 

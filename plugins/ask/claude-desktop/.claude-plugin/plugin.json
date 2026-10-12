@@ -1,7 +1,7 @@
 {
   "name": "ask-dubit-desktop",
-  "version": "0.2.0-beta.5",
-  "description": "Ask Dubit for Claude Desktop Chat. Approved-account research pilot with OAuth sign-in. Full native Desktop acceptance pending.",
+  "version": "0.2.0-beta.6",
+  "description": "Ask Dubit for Claude Desktop Chat. Company-controlled research pilot with existing Ask permissions and OAuth sign-in. Full native Desktop acceptance pending.",
   "author": {
     "name": "Dubit"
   }
