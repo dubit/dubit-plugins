@@ -1,7 +1,7 @@
-# Installing the dubit connector (dubit.Ask today) (not published until launch)
+# Installing the dubit connector (dubit.ask today) (not published until launch)
 
-The dubit connector (one connection for all dubit services; dubit.Ask today) is at `https://dubit.io/mcp`. You need a dubit account whose company has
-dubit.Ask switched on. Installing never signs you in or runs a question.
+The dubit connector (one connection for all dubit services; dubit.ask today) is at `https://dubit.io/mcp`. You need a dubit account whose company has
+dubit.ask switched on. Installing never signs you in or runs a question.
 
 ## Claude Desktop
 

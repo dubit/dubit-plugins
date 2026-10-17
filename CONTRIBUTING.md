@@ -4,7 +4,7 @@ Edit `src/` only: `src/product.json` (version, connector URL, names) and `src/as
 (the activation description only). Then run `npm run generate`; it writes `plugins/dubit/` (Claude Desktop) and
 `generated/chatgpt/` (ChatGPT). Never edit generated files. `npm test` fails if they drift.
 
-The skill only says when to use dubit.Ask and defers to the connector. The method (discover with
+The skill only says when to use dubit.ask and defers to the connector. The method (discover with
 `ask_list_sources`, keep request ids, recover with `ask_get_answer`, report limits) lives in the server's MCP
 `instructions` and tool descriptions, in trend-api, as the single source.
 
