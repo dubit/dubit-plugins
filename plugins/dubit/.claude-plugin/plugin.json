@@ -1,8 +1,8 @@
 {
   "name": "dubit",
   "version": "1.0.0-rc.1",
-  "description": "Dubit for Claude: research from Dubit.Ask today, with more Dubit services to come. Sign in with your Dubit account.",
+  "description": "dubit for Claude: research from dubit.Ask today, with more dubit services to come. Sign in with your dubit account.",
   "author": {
-    "name": "Dubit"
+    "name": "dubit"
   }
 }

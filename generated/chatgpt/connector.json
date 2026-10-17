@@ -1,6 +1,6 @@
 {
-  "name": "Dubit",
-  "description": "Dubit for ChatGPT: research from Dubit.Ask today, with more Dubit services to come. Sign in with your Dubit account.",
+  "name": "dubit",
+  "description": "dubit for ChatGPT: research from dubit.Ask today, with more dubit services to come. Sign in with your dubit account.",
   "mcp_server_url": "https://dubit.io/mcp",
   "authentication": "OAuth",
   "version": "1.0.0-rc.1"

@@ -1,12 +1,12 @@
 {
   "version": "1.0.0-rc.1",
   "pluginName": "dubit",
-  "productName": "Dubit.Ask",
-  "connectorName": "Dubit",
+  "productName": "dubit.Ask",
+  "connectorName": "dubit",
   "connectorUrl": "https://dubit.io/mcp",
   "mcpServerKey": "dubit",
   "skillName": "ask-dubit",
-  "author": "Dubit",
-  "pluginDescription": "Dubit for Claude: research from Dubit.Ask today, with more Dubit services to come. Sign in with your Dubit account.",
-  "connectorDescription": "Dubit for ChatGPT: research from Dubit.Ask today, with more Dubit services to come. Sign in with your Dubit account."
+  "author": "dubit",
+  "pluginDescription": "dubit for Claude: research from dubit.Ask today, with more dubit services to come. Sign in with your dubit account.",
+  "connectorDescription": "dubit for ChatGPT: research from dubit.Ask today, with more dubit services to come. Sign in with your dubit account."
 }
