@@ -5,7 +5,7 @@ Edit `src/` only: `src/product.json` (version, connector URL, names) and `src/as
 `generated/chatgpt/` (ChatGPT). Never edit generated files. `npm test` fails if they drift.
 
 The skill only says when to use Dubit.Ask and defers to the connector. The method (discover with
-`list_agents`, keep request ids, recover with `get_request`, report limits) lives in the server's MCP
+`ask_list_sources`, keep request ids, recover with `ask_get_answer`, report limits) lives in the server's MCP
 `instructions` and tool descriptions, in trend-api, as the single source.
 
 Validate the Claude package with `claude plugin validate --strict plugins/dubit`.
