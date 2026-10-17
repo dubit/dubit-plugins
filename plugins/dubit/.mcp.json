@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "dubit": {
+      "type": "http",
+      "url": "https://dubit.io/mcp"
+    }
+  }
+}

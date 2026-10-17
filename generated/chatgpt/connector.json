@@ -1,0 +1,7 @@
+{
+  "name": "Dubit.Ask",
+  "description": "Research on children's and teens' media, gaming and platforms, answered from Dubit's data. Sign in with your Dubit account.",
+  "mcp_server_url": "https://dubit.io/mcp",
+  "authentication": "OAuth",
+  "version": "1.0.0-rc.1"
+}

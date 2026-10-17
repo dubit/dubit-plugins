@@ -1,0 +1,8 @@
+{
+  "name": "dubit",
+  "version": "1.0.0-rc.1",
+  "description": "Dubit.Ask for Claude Desktop: research on children's and teens' media, gaming and platforms from Dubit's data.",
+  "author": {
+    "name": "Dubit"
+  }
+}

@@ -1,16 +1,15 @@
 # Contributing
 
-Keep the Claude and Codex host manifests separate. Keep both copies of the Ask skill identical until shared source generation is introduced. Preserve registered plugin and MCP identities unless the matching OAuth clients and install behaviour have been migrated and tested.
+Edit `src/` only: `src/product.json` (version, connector URL, names) and `src/ask-dubit.skill.md`
+(the method text). Then run `npm run generate`; it writes `plugins/dubit/` (Claude Desktop) and
+`generated/chatgpt/` (ChatGPT). Never edit generated files. `npm test` fails if they drift.
 
-To validate a change with Claude Code installed:
+The skill is method only: discover with `list_agents`, keep request ids, recover with
+`get_request`, report limits. Which dataset answers what, pilot status and access claims belong to
+the server, not here.
 
-```sh
-claude plugin validate --strict .
-claude plugin validate --strict plugins/ask/claude
-```
+Validate the Claude package with `claude plugin validate --strict plugins/dubit`.
 
-Validate actual catalogue installation in a disposable Claude configuration before claiming distribution works. Connecting to a service and running research are separate acceptance checks.
-
-Never commit account fixtures, tokens, environment files, provider credentials, machine-specific runtime paths or internal test transcripts. The current public OAuth client IDs are intentional. Keep the README and compatibility table aligned with what has actually been tested.
-
-Dubit Build is not implemented. Add it as an independent plugin when it is ready; do not register an empty marketplace entry.
+Do not add anything to `.claude-plugin/marketplace.json` or `.agents/plugins/marketplace.json`
+until launch is approved; a test keeps them empty. This repo is public: no tokens, environment
+files, client ids, internal hostnames (only `dubit.io`) or test transcripts.

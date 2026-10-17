@@ -1,0 +1,10 @@
+{
+  "name": "dubit-plugins",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "check": "node scripts/generate.mjs --check",
+    "test": "node --test test/*.test.mjs"
+  }
+}

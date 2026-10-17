@@ -1,8 +1,0 @@
-{
-  "name": "ask-dubit-development",
-  "version": "0.2.0-beta.2",
-  "description": "Ask Dubit internal research pilot (development). Ask the orchestrator or an accessible specialist.",
-  "author": {
-    "name": "Dubit"
-  }
-}

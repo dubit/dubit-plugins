@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0-rc.1",
+  "pluginName": "dubit",
+  "productName": "Dubit.Ask",
+  "connectorName": "Dubit.Ask",
+  "connectorUrl": "https://dubit.io/mcp",
+  "mcpServerKey": "dubit",
+  "skillName": "ask-dubit",
+  "author": "Dubit",
+  "pluginDescription": "Dubit.Ask for Claude Desktop: research on children's and teens' media, gaming and platforms from Dubit's data.",
+  "connectorDescription": "Research on children's and teens' media, gaming and platforms, answered from Dubit's data. Sign in with your Dubit account."
+}
