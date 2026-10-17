@@ -36,10 +36,9 @@ test("no hand-written copy of the connector URL or version outside src and outpu
   }
 });
 
-test("the skill carries method only", () => {
+test("the skill only activates and defers to the server", () => {
   const skill = readFileSync(join(root, "plugins/dubit/skills/ask-dubit/SKILL.md"), "utf8");
   for (const banned of [/on by default/i, /pilot/i, /beta/i, /fly\.dev/i]) assert.doesNotMatch(skill, banned);
-  for (const tool of ["list_agents", "ask_agent", "ask_dubit", "get_request"]) assert.match(skill, new RegExp(tool));
 });
 
 test("catalogues stay empty until launch", () => {

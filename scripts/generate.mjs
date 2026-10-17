@@ -33,8 +33,7 @@ export function build() {
     }),
     [`${plugin}/skills/${product.skillName}/SKILL.md`]:
       `---\nname: ${product.skillName}\ndescription: ${JSON.stringify(skill.description)}\n---\n\n${skill.body}`,
-    // ChatGPT has no skills: the connector is added by URL, and the same method text is what the
-    // server should carry as its MCP `instructions` (docs/install.md, "What ChatGPT needs").
+    // ChatGPT has no skills: it is given the URL and takes the method from the server's instructions.
     "generated/chatgpt/connector.json": json({
       name: product.connectorName,
       description: product.connectorDescription,
@@ -42,7 +41,6 @@ export function build() {
       authentication: "OAuth",
       version: product.version,
     }),
-    "generated/chatgpt/instructions.md": `# ${product.productName} method\n\n${skill.body}`,
   };
   return files;
 }

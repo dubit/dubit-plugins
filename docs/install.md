@@ -14,7 +14,7 @@ Dubit.Ask switched on. Installing never signs you in or runs a question.
 ## ChatGPT desktop
 
 ChatGPT adds a remote MCP server as an app in developer mode. There is no plugin to install and no
-skill; the guidance lives in the connector's own instructions and tool descriptions.
+skill; the guidance comes from the connector's own instructions and tool descriptions.
 
 1. In ChatGPT open **Settings > Apps > Advanced settings** and turn on **Developer mode**. (OpenAI lists it for Pro, Plus, Business, Enterprise and Education. On Business and Enterprise a workspace admin may need to allow it.)
 2. Back in **Settings > Apps** choose **Create app**.
@@ -29,7 +29,7 @@ The values for step 3 are generated into `generated/chatgpt/connector.json`.
 - Authorisation server metadata with S256 PKCE and either dynamic client registration or Client ID Metadata Documents.
 - ChatGPT's callback allowed by the connector (`MCP_CLIENT_CALLBACK_URLS`).
 - The access token's audience is the connector URL.
-- The method guidance (`generated/chatgpt/instructions.md`) delivered as the server's MCP `instructions`.
+- The method guidance (discover sources, keep request ids, recover with `get_request`) carried by the server's MCP `instructions`, the single source ChatGPT reads. Nothing is installed client-side for it.
 
 Sources: OpenAI, ChatGPT Developer mode (developers.openai.com/api/docs/guides/developer-mode) and
 Apps SDK authentication (developers.openai.com/apps-sdk/build/auth). Whether developer mode is
