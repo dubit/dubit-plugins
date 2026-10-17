@@ -4,20 +4,7 @@
     "name": "Dubit"
   },
   "metadata": {
-    "description": "Dubit plugins. Ask Dubit Desktop pilot and separate local developer previews; more Dubit plugins can follow."
+    "description": "Dubit plugins. Not available yet: the Dubit.Ask connector is being rebuilt."
   },
-  "plugins": [
-    {
-      "name": "ask-dubit-development",
-      "source": "./plugins/ask/claude",
-      "description": "Ask Dubit internal research pilot (development). Ask the orchestrator or an accessible specialist.",
-      "version": "0.2.0-beta.2"
-    },
-    {
-      "name": "ask-dubit-desktop",
-      "source": "./plugins/ask/claude-desktop",
-      "description": "Ask Dubit for Claude Desktop Chat. Company-controlled research pilot with existing Ask permissions and OAuth sign-in. Full native Desktop acceptance pending.",
-      "version": "0.2.0-beta.8"
-    }
-  ]
+  "plugins": []
 }
