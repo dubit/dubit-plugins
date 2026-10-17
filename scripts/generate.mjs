@@ -12,14 +12,14 @@ const product = JSON.parse(read("src/product.json"));
 /** Splits the skill source into its front matter description and its body. */
 function parseSkill(text) {
   const m = text.match(/^---\ndescription: (.+)\n---\n\n([\s\S]+)$/);
-  if (!m) throw new Error("src/ask-dubit.skill.md must start with a one-line description front matter");
+  if (!m) throw new Error("src/dubit-ask.skill.md must start with a one-line description front matter");
   return { description: m[1], body: m[2] };
 }
 
 const json = (v) => `${JSON.stringify(v, null, 2)}\n`;
 
 export function build() {
-  const skill = parseSkill(read("src/ask-dubit.skill.md"));
+  const skill = parseSkill(read("src/dubit-ask.skill.md"));
   const plugin = "plugins/dubit";
   const files = {
     [`${plugin}/.claude-plugin/plugin.json`]: json({

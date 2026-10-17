@@ -37,7 +37,7 @@ test("no hand-written copy of the connector URL or version outside src and outpu
 });
 
 test("the skill only activates and defers to the server", () => {
-  const skill = readFileSync(join(root, "plugins/dubit/skills/ask-dubit/SKILL.md"), "utf8");
+  const skill = readFileSync(join(root, "plugins/dubit/skills/dubit-ask/SKILL.md"), "utf8");
   for (const banned of [/on by default/i, /pilot/i, /beta/i, /fly\.dev/i]) assert.doesNotMatch(skill, banned);
 });
 

@@ -1,0 +1,5 @@
+---
+description: Youth, kids and family research from dubit.ask: what children, tweens, teens, Gen Alpha, Gen Z and their parents watch, play, use, buy and think, across YouTube, TikTok, Roblox, Fortnite, Minecraft, social apps, gaming, devices, screen time and brands, by age, gender or country. Use whenever someone wants figures, trends or survey findings on these audiences, for a pitch, deck, strategy or client question, even without naming dubit, and whenever they say ask dubit or use dubit.ask. Not for parenting advice, homework, stories, gameplay tips, account or login help, building games, platform policies or company metrics, adult-only research, or dubit's website or invoices.
+---
+
+Use the dubit connector for this. Follow its server instructions and tool descriptions for how to discover sources, ask, and recover answers. If its tools are missing, tell the user to connect dubit in their Connectors settings and sign in with their dubit account; do not ask for tokens or client credentials.

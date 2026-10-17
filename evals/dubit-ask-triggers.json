@@ -1,0 +1,122 @@
+[
+  {
+    "query": "I'm putting together a pitch for a toy brand next week and need some evidence on how 8-12 year olds in the UK actually spend their screen time now. YouTube vs Roblox vs TikTok, how many hours, that kind of thing. What does the data say?",
+    "should_trigger": true
+  },
+  {
+    "query": "what do teenagers really think about brands doing ads inside roblox games? i keep hearing they hate it but i want actual numbers if we have any",
+    "should_trigger": true
+  },
+  {
+    "query": "Can you ask dubit how Gen Alpha discovers new games? Specifically whether it's friends, YouTube creators or the app store.",
+    "should_trigger": true
+  },
+  {
+    "query": "use dubit.ask: share of US 13-17s who watch YouTube Shorts daily vs TikTok daily, latest wave",
+    "should_trigger": true
+  },
+  {
+    "query": "Our client is launching a kids' snack and wants to know which platforms 6-9 year olds use most with their parents present (co-viewing). Is there research on co-viewing by platform?",
+    "should_trigger": true
+  },
+  {
+    "query": "how much time do kids actually spend on youtube these days",
+    "should_trigger": true
+  },
+  {
+    "query": "do kids still watch linear TV at all? like what % of under-10s watch broadcast tv weekly vs streaming services. need this for a board paper",
+    "should_trigger": true
+  },
+  {
+    "query": "I'm writing a strategy doc for a children's publisher. What are the most popular YouTube content genres for 5-8 year olds right now \u2014 unboxing, gaming, animation, educational?",
+    "should_trigger": true
+  },
+  {
+    "query": "What proportion of Roblox players are under 13, and how does spending on Robux vary by age? Want survey-based figures, not press estimates.",
+    "should_trigger": true
+  },
+  {
+    "query": "Pull whatever dubit has on parents' attitudes to screen time limits for their kids \u2014 are they getting stricter or more relaxed?",
+    "should_trigger": true
+  },
+  {
+    "query": "we're thinking about a fortnite creative island for a sportswear brand. what do 10-14s say about which brands they'd want to see in games they play?",
+    "should_trigger": true
+  },
+  {
+    "query": "Which social platforms are Gen Z in Germany and France using most, and how does that differ from the UK? Comparing 16-24s across the three countries.",
+    "should_trigger": true
+  },
+  {
+    "query": "ask dubit what share of tweens have their own smartphone by age, 8 through 12",
+    "should_trigger": true
+  },
+  {
+    "query": "Writing a LinkedIn post arguing Gen Alpha doesn't care about TV anymore. Can you back that up with a couple of stats?",
+    "should_trigger": true
+  },
+  {
+    "query": "Is there any data on how many kids watch YouTube Playables or play games inside YouTube? And what genres they play there",
+    "should_trigger": true
+  },
+  {
+    "query": "My 9 year old is begging for Roblox and I'm worried about strangers messaging her. What parental controls should I turn on and is it safe?",
+    "should_trigger": false
+  },
+  {
+    "query": "my son has a book report due friday on Charlotte's Web, can you help him outline it? he's in 4th grade",
+    "should_trigger": false
+  },
+  {
+    "query": "What's the fastest way to get the Dragon fruit in Blox Fruits? I've been grinding Sea 2 for days",
+    "should_trigger": false
+  },
+  {
+    "query": "I can't log into my Roblox account, it says my password is wrong but I just reset it. My kid has robux on there, how do I recover it?",
+    "should_trigger": false
+  },
+  {
+    "query": "I need a market sizing for the UK craft beer market among adults 25-45: number of drinkers, average spend, growth rate. Can you build me a quick model?",
+    "should_trigger": false
+  },
+  {
+    "query": "How many daily active users did Roblox report in its latest quarterly earnings, and how much did bookings grow?",
+    "should_trigger": false
+  },
+  {
+    "query": "There's a broken link on the dubit.io case studies page, the Maybelline one 404s. Can you check the Next.js redirect config?",
+    "should_trigger": false
+  },
+  {
+    "query": "Can you draft an email to dubit's accounts team asking why invoice INV-2291 was charged twice this month?",
+    "should_trigger": false
+  },
+  {
+    "query": "I've attached Ofcom's 'Children and parents: media use and attitudes' report as a PDF. Summarise the five biggest findings in bullets for my team.",
+    "should_trigger": false
+  },
+  {
+    "query": "How do I set up YouTube Kids on our living room TV and block specific channels?",
+    "should_trigger": false
+  },
+  {
+    "query": "What's the PEGI age rating for Fortnite, and why did it get that rating?",
+    "should_trigger": false
+  },
+  {
+    "query": "I'm building a Roblox game in Luau. How do I make a leaderboard that saves player coins with DataStoreService?",
+    "should_trigger": false
+  },
+  {
+    "query": "What's TikTok's current ad policy for targeting users under 18 in the EU? I need the actual policy text, link me to the source",
+    "should_trigger": false
+  },
+  {
+    "query": "I need the media habits of UK adults over 55: hours of TV, radio and streaming a week. Numbers for a client presentation on silver audiences.",
+    "should_trigger": false
+  },
+  {
+    "query": "My teenager spends 6 hours a day on her phone and we keep fighting about it. How do I talk to her without it turning into an argument?",
+    "should_trigger": false
+  }
+]

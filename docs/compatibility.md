@@ -5,7 +5,7 @@ Nothing here is published yet; the catalogues are empty until launch is approved
 
 | Client | Connects through | Status |
 | --- | --- | --- |
-| Claude Desktop | The `dubit` plugin (connector + `ask-dubit` skill) | Not yet tested end to end |
+| Claude Desktop | The `dubit` plugin (connector + `dubit-ask` skill) | Not yet tested end to end |
 | ChatGPT desktop | Developer-mode app pointing at the connector URL; no skill | Not yet tested end to end |
 | Claude Code, Codex | Not in v1. Loopback plugins were removed from the source tree | Out of scope |
 
