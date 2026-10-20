@@ -10,5 +10,5 @@ Nothing here is published yet; the catalogues are empty until launch is approved
 | Claude Code, Codex | Not in v1. Loopback plugins were removed from the source tree | Out of scope |
 
 Each launch client needs one real end-to-end connection (connect, `ask_list_sources`, one question,
-recover it with `ask_get_answer`) before this table says "Tested". The connector URL and version
+check on it with `ask_check_question`) before this table says "Tested". The connector URL and version
 live in `src/product.json` only.

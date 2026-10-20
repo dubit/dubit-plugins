@@ -1,11 +1,12 @@
 # Contributing
 
 Edit `src/` only: `src/product.json` (version, connector URL, names) and `src/dubit-ask.skill.md`
-(the activation description only). Then run `npm run generate`; it writes `plugins/dubit/` (Claude Desktop) and
+(the activation description and its one-paragraph body). Then run `npm run generate`; it writes `plugins/dubit/` (Claude Desktop) and
 `generated/chatgpt/` (ChatGPT). Never edit generated files. `npm test` fails if they drift.
 
-The skill only says when to use dubit.ask and defers to the connector. The method (discover with
-`ask_list_sources`, keep request ids, recover with `ask_get_answer`, report limits) lives in the server's MCP
+The skill only says when to use dubit.ask, defers to the connector, and adds one line: while a tool says it is still
+working, keep calling `ask_check_question` with the same id. The method (discover with
+`ask_list_sources`, keep request ids, check with `ask_check_question`, report limits) lives in the server's MCP
 `instructions` and tool descriptions, in trend-api, as the single source.
 
 ## Changing the activation description

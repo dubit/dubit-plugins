@@ -31,7 +31,7 @@ The values for step 3 are generated into `generated/chatgpt/connector.json`.
 - Authorisation server metadata with S256 PKCE and either dynamic client registration or Client ID Metadata Documents.
 - ChatGPT's callback allowed by the connector (`MCP_CLIENT_CALLBACK_URLS`).
 - The access token's audience is the connector URL.
-- The method guidance (discover sources, keep request ids, recover with `ask_get_answer`) carried by the server's MCP `instructions`, the single source ChatGPT reads. Nothing is installed client-side for it.
+- The method guidance (discover sources, keep request ids, check with `ask_check_question`) carried by the server's MCP `instructions`, the single source ChatGPT reads. Nothing is installed client-side for it.
 
 Sources: OpenAI, ChatGPT Developer mode (developers.openai.com/api/docs/guides/developer-mode) and
 Apps SDK authentication (developers.openai.com/apps-sdk/build/auth). Whether developer mode is
