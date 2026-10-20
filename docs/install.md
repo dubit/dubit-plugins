@@ -1,17 +1,14 @@
-# Installing the dubit connector (dubit.ask today)
+# Installing the dubit connector
 
-Not published until launch.
-
-The dubit connector (one connection for all dubit services; dubit.ask today) is at `https://dubit.io/mcp`. You need a dubit account whose company has
-dubit.ask switched on. Installing never signs you in or runs a question.
+The dubit connector is one connection for all dubit services; today it carries dubit.ask. You need a
+dubit account whose company has dubit.ask switched on. Installing never signs you in or runs a question.
 
 ## Claude Desktop
 
-1. Open **Customize > Plugins > Add > Add marketplace > Add from a repository** and enter `dubit/dubit-plugins`.
-2. Find **dubit** and choose **Add**. (Until launch the catalogue is empty; to test a build, use a local checkout of this repo's `plugins/dubit` folder.)
-3. Open the plugin's **Connectors** tab, choose **Connect**, sign in with your dubit magic link and approve the connection. On Team and Enterprise plans an Owner may need to add the connector first.
-4. In a fresh chat ask: "Which dubit sources can I use?" It should call `ask_list_sources` and list them.
-5. Ask a research question, for example "How many kids use YouTube in the US?"
+Install the **dubit** plugin from this repo's marketplace, `dubit/dubit-plugins`, and connect it from
+the plugin's **Connectors** tab. The steps are in the plugin's [README](../plugins/dubit/README.md#install),
+the copy Claude shows people. Check it with "Which dubit sources can I use?": Claude should call
+`ask_list_sources` and list them.
 
 ## ChatGPT desktop
 
@@ -21,7 +18,7 @@ skill; the guidance comes from the connector's own instructions and tool descrip
 1. In ChatGPT open **Settings > Apps > Advanced settings** and turn on **Developer mode**. (OpenAI lists it for Pro, Plus, Business, Enterprise and Education. On Business and Enterprise a workspace admin may need to allow it.)
 2. Back in **Settings > Apps** choose **Create app**.
 3. Name: `dubit`. MCP server URL: `https://dubit.io/mcp`. Authentication: OAuth. Leave client credentials empty; ChatGPT registers itself and fills in its callback.
-4. Choose **Create**. A browser window opens: sign in with your dubit magic link, approve the connection, then **Continue**.
+4. Choose **Create**. A browser window opens: sign in with your dubit account, approve the connection, then **Continue**.
 5. In a new chat, add the app from the **+** menu and ask: "Which dubit sources can I use?"
 
 The values for step 3 are generated into `generated/chatgpt/connector.json`.

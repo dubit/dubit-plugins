@@ -6,7 +6,9 @@ import { fileURLToPath } from "node:url";
 import { build } from "../scripts/generate.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const product = JSON.parse(readFileSync(join(root, "src/product.json"), "utf8"));
+const readJson = (p) => JSON.parse(readFileSync(join(root, p), "utf8"));
+const product = readJson("src/product.json");
+const plugin = `plugins/${product.pluginName}`;
 
 test("committed output matches the generator", () => {
   for (const [path, content] of Object.entries(build())) {
@@ -15,34 +17,50 @@ test("committed output matches the generator", () => {
 });
 
 test("one version, stamped everywhere it appears", () => {
-  const plugin = JSON.parse(readFileSync(join(root, "plugins/dubit/.claude-plugin/plugin.json"), "utf8"));
-  const chatgpt = JSON.parse(readFileSync(join(root, "generated/chatgpt/connector.json"), "utf8"));
-  assert.equal(plugin.version, product.version);
-  assert.equal(chatgpt.version, product.version);
+  assert.equal(readJson(`${plugin}/.claude-plugin/plugin.json`).version, product.version);
+  assert.equal(readJson("generated/chatgpt/connector.json").version, product.version);
   assert.match(product.version, /^\d+\.\d+\.\d+(-[0-9A-Za-z.]+)?$/);
 });
 
-test("no hand-written copy of the connector URL or version outside src and output", () => {
-  const skip = new Set([".git", "node_modules", "plugins", "generated"]);
+test("hand-written files name neither the withdrawn pilot host nor a copy of the connector URL", () => {
+  const generated = new Set(Object.keys(build()));
+  const skip = new Set([".git", "node_modules", "src", "scripts", "test"]);
   const walk = (dir) => readdirSync(dir).flatMap((n) => {
     if (skip.has(n) && dir === root) return [];
     const p = join(dir, n);
     return statSync(p).isDirectory() ? walk(p) : [p];
   });
-  for (const f of walk(root).filter((p) => /\.(json|md|mjs)$/.test(p))) {
+  for (const f of walk(root).filter((p) => /\.(json|md|mjs|py)$/.test(p))) {
     const rel = f.slice(root.length + 1);
-    if (rel.startsWith("src/") || rel.startsWith("test/") || rel.startsWith("scripts/") || rel === "docs/install.md") continue;
-    assert.ok(!readFileSync(f, "utf8").includes("trends-server.fly.dev"), `${rel} names the withdrawn pilot host`);
+    if (generated.has(rel)) continue;
+    const text = readFileSync(f, "utf8");
+    assert.ok(!text.includes("trends-server.fly.dev"), `${rel} names the withdrawn pilot host`);
+    // ChatGPT has no package to install, so its steps are the one place a person types the URL.
+    if (rel !== "docs/install.md") assert.ok(!text.includes(product.connectorUrl), `${rel} copies the connector URL`);
   }
 });
 
 test("the skill only activates and defers to the server", () => {
-  const skill = readFileSync(join(root, "plugins/dubit/skills/dubit-ask/SKILL.md"), "utf8");
+  const skill = readFileSync(join(root, `${plugin}/skills/${product.skillName}/SKILL.md`), "utf8");
   for (const banned of [/on by default/i, /pilot/i, /beta/i, /fly\.dev/i]) assert.doesNotMatch(skill, banned);
 });
 
-test("catalogues stay empty until launch", () => {
-  for (const p of [".claude-plugin/marketplace.json", ".agents/plugins/marketplace.json"]) {
-    assert.deepEqual(JSON.parse(readFileSync(join(root, p), "utf8")).plugins, []);
+test("the plugin folder carries what Anthropic's directory requires: a 40-word README and a licence", () => {
+  const readme = readFileSync(join(root, `${plugin}/README.md`), "utf8").replace(/```[\s\S]*?```/g, "");
+  assert.ok(readme.split(/\s+/).filter(Boolean).length >= 40, "README needs at least 40 words outside code blocks");
+  assert.equal(readJson(`${plugin}/.claude-plugin/plugin.json`).license, product.license);
+  assert.match(readFileSync(join(root, "LICENSE"), "utf8"), new RegExp(`^${product.license} License\\n`));
+});
+
+test("the Claude marketplace lists exactly the generated plugin, by the name its manifest uses", () => {
+  const { plugins, renames } = readJson(".claude-plugin/marketplace.json");
+  assert.deepEqual(plugins.map((p) => p.name), [product.pluginName]);
+  for (const entry of plugins) {
+    assert.equal(readJson(join(entry.source, ".claude-plugin/plugin.json")).name, entry.name);
+    assert.ok(!(entry.name in renames), `${entry.name} is both listed and retired`);
   }
+});
+
+test("the Codex catalogue stays empty: Codex is not a v1 client", () => {
+  assert.deepEqual(readJson(".agents/plugins/marketplace.json").plugins, []);
 });

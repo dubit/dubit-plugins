@@ -1,7 +1,7 @@
 {
   "name": "dubit",
   "interface": {
-    "displayName": "Dubit plugins"
+    "displayName": "dubit plugins"
   },
   "plugins": []
 }

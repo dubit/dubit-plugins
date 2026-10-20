@@ -1,8 +1,13 @@
 {
   "name": "dubit",
-  "version": "1.0.0-rc.1",
-  "description": "dubit for Claude: research from dubit.ask today, with more dubit services to come. Sign in with your dubit account.",
+  "displayName": "dubit",
+  "version": "1.0.0",
+  "description": "dubit for Claude: ask dubit.ask research questions about children, teens and families, and get answers with charts from dubit's own data. Sign in with your dubit account.",
   "author": {
-    "name": "dubit"
-  }
+    "name": "dubit",
+    "url": "https://dubit.io"
+  },
+  "homepage": "https://github.com/dubit/dubit-plugins/tree/main/plugins/dubit#readme",
+  "repository": "https://github.com/dubit/dubit-plugins",
+  "license": "MIT"
 }

@@ -1,10 +1,20 @@
 {
   "name": "dubit",
   "owner": {
-    "name": "Dubit"
+    "name": "dubit",
+    "url": "https://dubit.io"
   },
-  "metadata": {
-    "description": "Dubit plugins. Not available yet: the Dubit.Ask connector is being rebuilt."
+  "description": "Plugins from dubit. The dubit plugin brings dubit.ask research on children, teens and families into Claude.",
+  "plugins": [
+    {
+      "name": "dubit",
+      "source": "./plugins/dubit",
+      "description": "dubit for Claude: ask dubit.ask research questions about children, teens and families, and get answers with charts from dubit's own data. Sign in with your dubit account."
+    }
+  ],
+  "renames": {
+    "ask-dubit-desktop": null,
+    "ask-dubit-development": null
   },
-  "plugins": []
+  "forceRemoveDeletedPlugins": true
 }
