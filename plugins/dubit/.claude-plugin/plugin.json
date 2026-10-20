@@ -1,7 +1,7 @@
 {
   "name": "dubit",
   "displayName": "dubit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "dubit for Claude: ask dubit.ask research questions about children, teens and families, and get answers with charts from dubit's own data. Sign in with your dubit account.",
   "author": {
     "name": "dubit",

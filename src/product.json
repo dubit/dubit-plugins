@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "pluginName": "dubit",
   "displayName": "dubit",
   "connectorUrl": "https://dubit.io/mcp",
