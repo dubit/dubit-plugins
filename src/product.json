@@ -2,8 +2,6 @@
   "version": "1.0.0",
   "pluginName": "dubit",
   "displayName": "dubit",
-  "productName": "dubit.ask",
-  "connectorName": "dubit",
   "connectorUrl": "https://dubit.io/mcp",
   "mcpServerKey": "dubit",
   "skillName": "dubit-ask",
@@ -11,9 +9,11 @@
   "authorUrl": "https://dubit.io",
   "repository": "dubit/dubit-plugins",
   "license": "MIT",
+  "licenceScope": "The MIT licence covers the files in this repository only. It does not cover the dubit.ask service, its data, or the dubit name and logo.",
+  "eligibility": "a dubit account whose company has the dubit connector switched on for use in Claude",
+  "retentionDays": 90,
   "marketplaceName": "dubit",
   "marketplaceDescription": "Plugins from dubit. The dubit plugin brings dubit.ask research on children, teens and families into Claude.",
   "retiredPlugins": ["ask-dubit-desktop", "ask-dubit-development"],
-  "pluginDescription": "dubit for Claude: ask dubit.ask research questions about children, teens and families, and get answers with charts from dubit's own data. Sign in with your dubit account.",
-  "connectorDescription": "dubit for ChatGPT: research from dubit.ask today, with more dubit services to come. Sign in with your dubit account."
+  "pluginDescription": "dubit for Claude: ask dubit.ask research questions about children, teens and families, and get answers with charts from dubit's own data. Sign in with your dubit account."
 }

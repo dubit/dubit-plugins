@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Builds every client package and the Claude marketplace from src/ and the root LICENSE. Run
+// Builds the Claude plugin, the marketplace and the root README from src/ and the root LICENSE. Run
 // `node scripts/generate.mjs`; `--check` fails if the committed output differs (used by `npm test`).
 // Edit src/, never the output.
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
@@ -19,11 +19,15 @@ function parseSkill(text) {
 
 const json = (v) => `${JSON.stringify(v, null, 2)}\n`;
 
-/** Fills `{{key}}` placeholders from src/product.json; an unknown key is an error, not a blank. */
-function fill(text, source) {
-  return text.replace(/\{\{(\w+)\}\}/g, (_, key) => {
+/** Writes a list as code spans: `a`, `b` and `c`. */
+const codeList = (items) => items.map((i) => `\`${i}\``).join(", ").replace(/, ([^,]*)$/, " and $1");
+
+/** Fills a src/ template's `{{key}}` placeholders from src/product.json; an unknown key is an error. */
+function fill(source) {
+  return read(source).replace(/\{\{(\w+)\}\}/g, (_, key) => {
     if (!(key in product)) throw new Error(`${source} names {{${key}}}, which src/product.json does not have`);
-    return product[key];
+    const value = product[key];
+    return Array.isArray(value) ? codeList(value) : String(value);
   });
 }
 
@@ -48,7 +52,7 @@ export function build() {
     [`${plugin}/skills/${product.skillName}/SKILL.md`]:
       `---\nname: ${product.skillName}\ndescription: ${JSON.stringify(skill.description)}\n---\n\n${skill.body}`,
     // Installers receive only the plugin folder, so it carries its own README and LICENSE.
-    [`${plugin}/README.md`]: fill(read("src/plugin-readme.md"), "src/plugin-readme.md"),
+    [`${plugin}/README.md`]: fill("src/plugin-readme.md"),
     [`${plugin}/LICENSE`]: read("LICENSE"),
     // The withdrawn pilot plugins map to null, so Claude Code drops them from existing installs.
     ".claude-plugin/marketplace.json": json({
@@ -59,14 +63,7 @@ export function build() {
       renames: Object.fromEntries(product.retiredPlugins.map((name) => [name, null])),
       forceRemoveDeletedPlugins: true,
     }),
-    // ChatGPT has no skills: it is given the URL and takes the method from the server's instructions.
-    "generated/chatgpt/connector.json": json({
-      name: product.connectorName,
-      description: product.connectorDescription,
-      mcp_server_url: product.connectorUrl,
-      authentication: "OAuth",
-      version: product.version,
-    }),
+    "README.md": fill("src/readme.md"),
   };
   return files;
 }

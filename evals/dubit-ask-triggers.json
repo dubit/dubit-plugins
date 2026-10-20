@@ -84,11 +84,11 @@
     "should_trigger": false
   },
   {
-    "query": "There's a broken link on the dubit.io case studies page, the Maybelline one 404s. Can you check the Next.js redirect config?",
+    "query": "There's a broken link on the dubit.io case studies page: one of the studies 404s. Can you check the site's redirect settings?",
     "should_trigger": false
   },
   {
-    "query": "Can you draft an email to dubit's accounts team asking why invoice INV-2291 was charged twice this month?",
+    "query": "Can you draft an email to dubit's accounts team asking why our last invoice was charged twice this month?",
     "should_trigger": false
   },
   {

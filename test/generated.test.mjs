@@ -16,9 +16,7 @@ test("committed output matches the generator", () => {
   }
 });
 
-test("one version, stamped everywhere it appears", () => {
-  assert.equal(readJson(`${plugin}/.claude-plugin/plugin.json`).version, product.version);
-  assert.equal(readJson("generated/chatgpt/connector.json").version, product.version);
+test("the version is semver (it is stamped into the manifest, which the first test covers)", () => {
   assert.match(product.version, /^\d+\.\d+\.\d+(-[0-9A-Za-z.]+)?$/);
 });
 
@@ -35,14 +33,22 @@ test("hand-written files name neither the withdrawn pilot host nor a copy of the
     if (generated.has(rel)) continue;
     const text = readFileSync(f, "utf8");
     assert.ok(!text.includes("trends-server.fly.dev"), `${rel} names the withdrawn pilot host`);
-    // ChatGPT has no package to install, so its steps are the one place a person types the URL.
-    if (rel !== "docs/install.md") assert.ok(!text.includes(product.connectorUrl), `${rel} copies the connector URL`);
+    assert.ok(!text.includes(product.connectorUrl), `${rel} copies the connector URL`);
+  }
+});
+
+test("public text writes the brand in lowercase; only the registered company name is capitalised", () => {
+  const publicFiles = ["README.md", `${plugin}/README.md`, "docs/compatibility.md", ".claude-plugin/marketplace.json",
+    `${plugin}/.claude-plugin/plugin.json`, `${plugin}/skills/${product.skillName}/SKILL.md`];
+  for (const p of publicFiles) {
+    assert.doesNotMatch(readFileSync(join(root, p), "utf8").replaceAll("Dubit Limited", ""), /Dubit/, `${p} capitalises dubit`);
   }
 });
 
 test("the skill only activates and defers to the server", () => {
   const skill = readFileSync(join(root, `${plugin}/skills/${product.skillName}/SKILL.md`), "utf8");
-  for (const banned of [/on by default/i, /pilot/i, /beta/i, /fly\.dev/i]) assert.doesNotMatch(skill, banned);
+  // Naming a tool is the first step to copying the server's method into the skill.
+  for (const banned of [/on by default/i, /pilot/i, /beta/i, /fly\.dev/i, /\bask_[a-z_]+/]) assert.doesNotMatch(skill, banned);
 });
 
 test("the plugin folder carries what Anthropic's directory requires: a 40-word README and a licence", () => {
@@ -61,6 +67,6 @@ test("the Claude marketplace lists exactly the generated plugin, by the name its
   }
 });
 
-test("the Codex catalogue stays empty: Codex is not a v1 client", () => {
+test("the Codex catalogue stays empty: Codex is not supported", () => {
   assert.deepEqual(readJson(".agents/plugins/marketplace.json").plugins, []);
 });
