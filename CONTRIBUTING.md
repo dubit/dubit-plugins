@@ -5,8 +5,7 @@ wording), `src/dubit-ask.skill.md` (the activation description and its one-parag
 `src/plugin-readme.md` and `src/readme.md` (the plugin's README and this repo's; `{{key}}` fills in a
 `product.json` value) and `LICENSE`. Then run `npm run generate`; it writes `plugins/dubit/` (with its
 README and LICENSE), `.claude-plugin/marketplace.json` and `README.md`. Never edit generated files.
-`npm test` fails if they drift. `retentionDays` is a copy of the connector's own retention setting:
-change it when the connector's does.
+`npm test` fails if they drift.
 
 Raise `version` in `src/product.json` on every release: installed copies update only when it changes.
 

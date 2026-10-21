@@ -35,7 +35,7 @@ can ask about, ask "Which dubit sources can I use?"
   policy.
 - dubit stores each question and its answer with your account, as it does for questions asked on
   dubit.io, and dubit staff can read them to support you and to check the quality of the answers. The
-  record that lets Claude fetch an answer again is deleted after 90 days.
+  record that lets Claude fetch an answer again is kept as long as the conversation it belongs to.
 - Disconnect from the plugin's **Connectors** tab. To stop access at dubit's end, disconnect it at
   https://dubit.io/ask/account/connections.
 

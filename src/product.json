@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "pluginName": "dubit",
   "displayName": "dubit",
   "connectorUrl": "https://dubit.io/mcp",
@@ -11,7 +11,6 @@
   "license": "MIT",
   "licenceScope": "The MIT licence covers the files in this repository only. It does not cover the dubit.ask service, its data, or the dubit name and logo.",
   "eligibility": "a dubit account whose company has the dubit connector switched on for use in Claude",
-  "retentionDays": 90,
   "marketplaceName": "dubit",
   "marketplaceDescription": "Plugins from dubit. The dubit plugin brings dubit.ask research on children, teens and families into Claude.",
   "retiredPlugins": ["ask-dubit-desktop", "ask-dubit-development"],
